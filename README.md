@@ -1,15 +1,15 @@
-#Wifi Probe Mapper
+# Wifi Probe Mapper
 
-##What is this thing?
+## What is this thing?
 This is a tool for collecting and mapping SSIDs from wifi access point beacons and client probe requests. It was put together as a demo for high school students to show how leaving Wifi turned on on a device can leak information about where that device has been.
 
-##How does it work?
+## How does it work?
 There are two main parts to this tool; A Python backend server and a HTML page acting as the front end. The Python server uses Tornado to manage web socket connections and the Scapy framework to sniff for beacons and client probes. Coordinates for SSIDs caught in the beacons and probes are gotten using the Wigle (https://www.wigle.net) API. The front end web page connects back to the server using a web socket, and once it's connection it'll start getting information on captures SSIDs. The Google Maps JavaScript API is used to show the location of each SSID on a map.
 
 Note: Wigle uses information from war drivers for locations of networks. There may or may not be a location available for a given SSID and the location may not be accurate. SSIDs which are not unique (i.e. "Starbucks Wifi", "Free Wifi", "Airport Wifi") may have several locations associated with them.
 
-##Installation
-###Requirements
+## Installation
+### Requirements
 A Python version > 3 is needed to run the backend server.
 ```
 sudo apt-get install python3
@@ -18,7 +18,7 @@ Pip can take care of the required Python modules (Tornado and scapy-python3)
 ```
 pip3 install -r requirments.txt 
 ```
-###Configuration
+### Configuration
 Before launching the tool, items need to be set in the configuration file.
 ```
 $cat config.js
@@ -41,7 +41,7 @@ var config = {
 
 1. An API key is needed for the Google maps API. This can be gotten from [https://developers.google.com/maps/documentation/javascript/get-api-key]
 
-##Usage
+## Usage
 
 ```
 $./WPMServer.py --help
