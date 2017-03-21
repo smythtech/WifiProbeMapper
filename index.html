@@ -90,7 +90,7 @@
           if(msg.location[i].lat == 0.0 && msg.location[i].lng == 0.0) {
 	    loc = new google.maps.LatLng(config.defaultLat, config.defaultLong)
           } else {
-            loc = new google.maps.LatLng(msg.location[i].lng, msg.location[i].lat)     
+            loc = new google.maps.LatLng(msg.location[i].lat, msg.location[i].lng)     
 	  }
 	  var marker = new google.maps.Marker({
               label: msg.ssid,
