@@ -34,7 +34,7 @@ var config = {
               }
 ```
 
-1. By default the map will conter on New York. This can be changed by adjecting the "defaultLat" and "defaultLong" variables in the config.js file.
+1. By default the map will center on New York. This can be changed by adjecting the "defaultLat" and "defaultLong" variables in the config.js file.
 
 1. An API token must be provided for the Wigle API. This token is the base64 encoded combination of the Wigle API user and Key. The token can be gotten by signing up at [https://wigle.org/] and generating it in the 
 [https://wigle.net/account] page.
