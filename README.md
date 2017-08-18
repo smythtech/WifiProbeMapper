@@ -63,7 +63,7 @@ Put interface into monitoring mode.
 $airmon-ng start <INTERFACE>
 ```
 
-Start the server.
+Start the server. This may require root privileges.
 ```
 $./WPMServer.py -i <INTERFACE IN MONITORING MODE>
 ``` 
