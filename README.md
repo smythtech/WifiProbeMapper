@@ -68,7 +68,13 @@ Start the server.
 $./WPMServer.py -i <INTERFACE IN MONITORING MODE>
 ``` 
 
-Once the server is running the index.html file can be opened with a browser. If any issues occur try restarting the backend server and refreshing the browser.
+Once the server is running the index.html file can be opened with a browser. 
+
+```
+$firefox index.html
+```
+
+If any issues occur try restarting the backend server and refreshing the browser.
 
 
 

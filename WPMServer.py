@@ -17,7 +17,11 @@ class WebSocketSever(websocket.WebSocketHandler):
 
   def open(self):
     print("[+] Client connected")
-    sniffer(self)
+    try:
+      sniffer(self)
+    except PermissionError as e:
+      print("[!] Got permission error. Run as root!")
+      ioloop.IOLoop.instance().stop()
     
   def on_message(self, message):
     print("[+] Got message: " + str(message))
@@ -136,8 +140,9 @@ def main():
 
   http_server = httpserver.HTTPServer(app)
   http_server.listen(config["serverPort"])
-  print("[+] Web socket listening on port " + config["serverPort"])
+  print("[+] Web socket ready")
+  
   ioloop.IOLoop.instance().start()
-
+    
 if __name__ == '__main__':
   main()
