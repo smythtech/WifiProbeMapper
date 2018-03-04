@@ -48,6 +48,10 @@ class FrameHandler:
           info = {}
           info['device'] = frame.addr2
           info['ssid'] = probeSSID
+          if(len(self.config["whitelist"]) > 0 and (info['ssid'] not in self.config["whitelist"])):
+            return
+          if(len(self.config["blacklist"]) > 0 and (info['ssid'] in self.config["blacklist"])):
+            return 
           if(self.checkDuplicate(info) == False):
             self.addSeen(info)
             locations = self.getLocation(probeSSID)
@@ -135,6 +139,10 @@ def main():
   print("[+] Getting config from config.js")
   config = getConfig()
 
+  if(len(config["whitelist"]) > 0 and len(config["blacklist"]) > 0):
+    print("[!] There is a whitelist and blacklist set. This might lead to some unexpected behaviour! Please use only the whitelist or only the blacklist.")
+    exit(0)
+    
   print("[+] Setting up web socket server...")
   app = web.Application([(r'/', WebSocketSever),])
 
