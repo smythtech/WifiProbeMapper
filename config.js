@@ -5,5 +5,7 @@ var config = {
                 "defaultLong": "74.0059",
                 "defaultZoom": 8,
                 "wigleAuthToken": "<WIGLE_API_TOKEN_IN_BASE64>",
-                "googleMapsAPIKey": "<GOOGLE_MAPS_API_KEY>"
+                "googleMapsAPIKey": "<GOOGLE_MAPS_API_KEY>",
+                "whitelist": [],
+                "blacklist": []
               }
